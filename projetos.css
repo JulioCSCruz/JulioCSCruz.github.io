@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: rgb(255, 255, 255);
+    font-family: 'merriweather', Georgia;
+}
+
+.header-main {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(90deg, #0a0a0a, #1a1a1a);
+    position: fixed;
+}
+
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    font-size: 2rem;
+    padding-right: 80rem;
+    padding-left: 4rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    color: greenyellow;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #9BE564;
+    /* tom de destaque suave */
+    letter-spacing: 1px;
+}
+
+
+
+
+.nav {
+    font-family: 'dongle', serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
+    /* tira o sublinhado */
+    color: rgba(255, 255, 255, 0.89);
+    font-weight: 500;
+    transition: color .6s;
+}
+
+.nav a:hover {
+    color: greenyellow;
+    /* cor de destaque no hover */
+}
+
+
+
+.inicio {
+    position: relative;
+    background: url('can.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15rem;
+    color: rgba(255, 255, 255, 0.89);
+}
+
+.inicio img {
+    padding-top: 16rem;
+}
+
+
+.inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 1) 100%),
+        rgba(0, 0, 0, 0.6);
+}
+
+.inicio * {
+    position: relative;
+    z-index: 1;
+    /* texto acima do overlay */
+}
+
+.inicio p {
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+h1 {
+    font-size: 6rem;
+    max-width: 70%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 4rem;
+
+    padding-bottom: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 2rem;
+    max-width: 60%;
+    padding-bottom: 4rem;
+
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+.artigos {
+    position: relative;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+    padding-top: 15rem;
+    color: rgba(255, 255, 255, 0.89);
+}
+
+figure {
+    padding-bottom: 5rem;
+}
+
+.grafico {
+    display: flex;
+    flex-direction: row;
+}
+
+.topicos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: grey;
+    padding-top: 2rem;
+    margin: 0 auto;
+    width: 90%;
+
+}
+
+.top a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    text-decoration: underline;
+    color: white;
+    padding-bottom: 3rem;
+
+}
+
+a:hover {
+    color: greenyellow;
+}
+
+
+.contatos {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #1a1a1a;
+    align-items: right;
+}
+
+.contatos h2 {
+    font-size: 2rem;
+    padding-left: 25rem;
+}
+
+.contatos p {
+    font-size: 2rem;
+}
+
+.cont {
+    display: flex;
+    flex-direction: row;
+    gap: 35rem;
+    padding-bottom: 2rem;
+}
+
+
+/* ========================= */
+/* 📱 CELULAR (até 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* HEADER */
+    .header-main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .logo {
+        padding: 0;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav {
+        flex-direction: row;
+        /* lado a lado */
+        justify-content: center;
+        /* centraliza horizontalmente */
+        flex-wrap: wrap;
+        /* quebra linha se não couber */
+        gap: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.89);
+        transition: color 0.3s;
+    }
+
+    .nav a:hover {
+        color: greenyellow;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .inicio {
+        padding-top: 12rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        min-height: 70vh;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        padding: 1rem 0;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        max-width: 90%;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    .topicos {
+        margin: 0 auto;
+        padding: 1rem;
+        width: 90%;
+    }
+
+    .top a {
+        font-size: 1.1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* IMAGENS E GRÁFICOS */
+    figure img,
+    .grafico img {
+        width: 90%;
+        height: auto;
+    }
+
+    .grafico {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .line img {
+        width: 60%;
+    }
+
+    /* CONTATOS / FOOTER */
+    .cont {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contatos h2,
+    .contatos p {
+        padding-left: 0;
+        font-size: 1.2rem;
+    }
+
+    .contatos {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .artigos {
+        padding-top: 8rem;
+    }
+}
+
+
+/* ========================= */
+/* 📱 CELULAR (até 768px) */
+/* ========================= */
+@media (min-width: 769px) and (max-width:1440px) {
+
+    body {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* HEADER */
+    .header-main {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .logo {
+        padding-right: 30rem;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav {
+        flex-direction: row;
+        /* lado a lado */
+        justify-content: center;
+        /* centraliza horizontalmente */
+        flex-wrap: wrap;
+        /* quebra linha se não couber */
+        gap: 1rem;
+
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.89);
+        transition: color 0.3s;
+    }
+
+    .nav a:hover {
+        color: greenyellow;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .inicio {
+        padding-top: 12rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        min-height: 80vh;
+    }
+
+
+
+    h2 {
+        font-size: 4rem;
+        padding: 1rem 0;
+    }
+
+    h3 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 2rem;
+        max-width: 90%;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    .topicos {
+        margin: 0 auto;
+        padding: 1rem;
+        width: 90%;
+    }
+
+
+
+    /* IMAGENS E GRÁFICOS */
+    figure img,
+    .grafico img {
+        width: 90%;
+        height: auto;
+    }
+
+    .grafico {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .line img {
+        width: 60%;
+    }
+
+    /* CONTATOS / FOOTER */
+    .cont {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contatos h2,
+    .contatos p {
+        padding-left: 0;
+        font-size: 1.2rem;
+    }
+
+    .contatos {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .artigos {
+        padding-top: 8rem;
+    }
+}

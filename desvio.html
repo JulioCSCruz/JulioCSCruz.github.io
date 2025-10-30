@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Júlio Cruz | Analista</title>
+    <!--favicon-->
+    <link rel="icon" href="fav.png" type="image/png">
+    <!--referencia css-->
+    <link rel="stylesheet" href="projetos.css">
+    <!--otimização de fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--fontes-->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dongle&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="header-main">
+        <div class="logo">
+            <span class="name">Júlio Cruz</span>
+            <span class="role">Analista de Dados</span>
+        </div>
+        <ul class="nav">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html/#link-projetos">Projetos</a></li>
+            <li><a href="#link-sobre">Sobre</a></li>
+            <li><a href="#link-contatos">Contatos</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="inicio">
+            <h1>
+                Análise de Variação de Vendas por Categoria e Região
+            </h1>
+
+        </section>
+        <section class="topicos">
+            <h2>Tópicos</h2>
+            <div class="top">
+                <a href="#construção">Construção da análise</a>
+                <a href="#analise">Análise comparativa entre o coeficiente de variação da receita e do lucro</a>
+                <a href="#insight">Insights e recomendações</a>
+            </div>
+        </section>
+        <section class="artigos">
+            <div class="line">
+                <h3 id="construção">Construção da análise</h3>
+                <img src="line.png" alt="linha" class="line">
+            </div>
+            <p>
+                O objetivo deste projeto foi compreender a <strong>variação nas vendas</strong> ao longo do tempo,
+                segmentando os dados por <strong>categoria de produto e região</strong>, para identificar quais
+                segmentos
+                apresentaram maior <strong>instabilidade ou consistência</strong> nos lucros e receitas.
+            </p>
+
+            <!-- Imagem 1: Tabela base -->
+            <figure>
+                <img src="sql tabela sales.png" alt="Tabela base de vendas no SQL Server">
+                <figcaption>Tabela original contendo dados de pedidos, categorias e receitas.</figcaption>
+            </figure>
+
+            <p>
+                A base de dados utilizada (tabela <code>sales</code>) contém informações detalhadas de pedidos,
+                incluindo data, categoria, receita, custo, região e status da entrega.
+                A partir dela, foi criada uma nova tabela chamada <code>desvio</code> para consolidar
+                indicadores estatísticos necessários para análise temporal.
+            </p>
+
+            <!-- Imagem 2: Código SQL -->
+            <figure>
+                <img src="sql consulta desvio.png" alt="Criação da tabela desvio e integração de dados">
+                <figcaption>Criação da tabela e cálculo do desvio padrão, média e coeficiente de variação.</figcaption>
+            </figure>
+
+            <p>
+                No código SQL abaixo, foram aplicadas funções como <code>AVG()</code> e <code>STDEV()</code>
+                para calcular a <strong>média de receita</strong>, o <strong>desvio padrão</strong> e o
+                <strong>coeficiente de variação</strong> por mês e categoria.
+            </p>
+
+            <!-- Imagem 3: Resultado da tabela desvio -->
+            <figure>
+                <img src="sql tabela desvio.png" alt="Resultados da tabela desvio no SQL">
+                <figcaption>Resultado consolidado com métricas estatísticas calculadas.</figcaption>
+            </figure>
+
+            <!-- Imagem 4: Gráfico do coeficiente de variação -->
+            <figure>
+                <div class="grafico">
+                    <img src="grafico desvio receita.png"
+                        alt="Gráfico de coeficiente de variação da receita por categoria no Power BI">
+                    <img src="grafico desvio lucro.png"
+                        alt="Gráfico de coeficiente de variação do lucro por categoria no Power BI">
+                </div>
+                <figcaption>O gráfico de linhas da esquerda representa o coeficiente de variação de receita. Enquanto na
+                    figura direita, temos outro gráfico representando o coeficiente de variação do lucro.</figcaption>
+            </figure>
+            <div class="line">
+                <h3 id="analise">Análise comparativa entre o coeficiente de variação da receita e do lucro</h3>
+                <img src="line.png" alt="linha">
+            </div>
+            <p>
+                Ao comparar o comportamento do coeficiente de variação calculado sobre a receita e sobre o lucro,
+                observam-se diferenças relevantes entre as categorias, indicando distintos níveis de estabilidade tanto
+                nas vendas quanto na rentabilidade ao longo de 2023 e 2024.
+            </p>
+
+            <p>
+                A categoria Casa apresenta coeficientes semelhantes em ambas as métricas, variando majoritariamente
+                entre 1 e 1,3 durante todo o período. Esse alinhamento sugere que a lucratividade acompanha diretamente
+                o desempenho de vendas, revelando margens estáveis e um controle consistente de custos.
+            </p>
+
+            <p>
+                Na categoria Beleza, nota-se um comportamento distinto: enquanto a receita apresenta picos acentuados —
+                atingindo valores próximos de 2,5 no início de 2023 e cerca de 1,3 em meados de 2024 —, o lucro
+                mantém-se com coeficientes abaixo de 1. Essa diferença indica que, embora as vendas oscilem
+                significativamente, a margem de lucro permanece relativamente estável, possivelmente devido a uma
+                política de preços equilibrada ou controle eficaz dos custos de produção e marketing.
+
+            <p>
+                Os Eletrônicos mostram estabilidade em ambos os indicadores, com pequenas variações em torno de 1,3 no
+                meio de 2023. Esse padrão reforça a ideia de consistência operacional e de rentabilidade, sugerindo que
+                eventuais oscilações de vendas não impactam de forma expressiva o lucro líquido.
+            </p>
+
+            <p>Por fim, a categoria Moda demonstra alta regularidade nos resultados financeiros, apresentando
+                coeficientes de variação do lucro sempre abaixo de 0,9, enquanto a receita exibe apenas um pico isolado
+                de 1,5 em meados de 2023. Isso indica que, apesar de variações ocasionais nas vendas, a rentabilidade da
+                categoria se mantém sólida e previsível.
+            </p>
+            <div class="line">
+                <h3 id="insight">Insights e recomendações</h3>
+                <img src="line.png" alt="linha" class="line">
+            </div>
+            <p>
+                A análise comparativa entre o coeficiente de variação da receita e do lucro evidencia oportunidades de
+                aprimoramento em algumas categorias:
+            </p>
+            <p>
+                Beleza: as oscilações na receita, apesar da estabilidade no lucro, indicam que promoções ou campanhas
+                podem estar impulsionando vendas sem comprometer margens. Recomenda-se monitorar o efeito de campanhas
+                sazonais para replicar estratégias bem-sucedidas em outros períodos.
+            </p>
+            <p>
+                Casa: o alinhamento entre lucro e receita mostra boa previsibilidade, mas o nível relativamente alto do
+                coeficiente (acima de 1) sugere potencial para otimização de estoque e demanda, visando reduzir
+                flutuações mensais.
+            </p>
+
+            <p>
+                Eletrônicos: a consistência observada indica gestão eficiente de custos, mas os picos pontuais de
+                variação podem refletir dependência de lançamentos ou eventos de mercado; uma análise de mix de produtos
+                e sazonalidade ajudaria a suavizar essas oscilações.
+            </p>
+
+            <p>
+                Moda: apresenta a melhor estabilidade de lucro, o que reforça eficiência na precificação. Essa categoria
+                poderia servir como referência de estratégia comercial para as demais.
+            </p>
+
+            <p>
+                Em resumo, as categorias analisadas demonstram bom controle operacional, mas há espaço para reduzir
+                variações de desempenho e maximizar rentabilidade. Uma próxima etapa seria analisar os fatores que mais
+                influenciam as flutuações de receita (por exemplo, promoções, sazonalidade ou custos logísticos) para
+                orientar decisões de precificação e planejamento de estoque.
+            </p>
+    </main>
+    <footer id="contatos" class="contatos">
+        <div class="cont">
+            <h2>Celular:</h2>
+            <p>(21)99755-4045</p>
+        </div>
+        <div class="cont">
+            <h2>Email:</h2>
+            <p>juliocruz.trabalhos@gmail.com</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

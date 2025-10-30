@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: rgb(255, 255, 255);
+    font-family: 'merriweather', Georgia;
+}
+
+.header-main {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(90deg, #0a0a0a, #1a1a1a);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    font-size: 2rem;
+    padding-right: 80rem;
+    padding-left: 4rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    color: greenyellow;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #9BE564;
+    /* tom de destaque suave */
+    letter-spacing: 1px;
+}
+
+.nav {
+    font-family: 'dongle', serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav a {
+    text-decoration: none;
+    /* tira o sublinhado */
+    color: rgba(255, 255, 255, 0.89);
+    font-weight: 500;
+    transition: color .6s;
+}
+
+.nav a:hover {
+    color: greenyellow;
+    /* cor de destaque no hover */
+}
+
+.inicio {
+    position: relative;
+    background: url('can.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15rem;
+    color: rgba(255, 255, 255, 0.89);
+}
+
+.inicio img {
+    padding-top: 16rem;
+}
+
+.inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%), rgba(0, 0, 0, 0.6);
+}
+
+.inicio * {
+    position: relative;
+    z-index: 1;
+    /* texto acima do overlay */
+}
+
+.inicio p {
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+    padding-left: 5rem;
+}
+
+.texto {
+    font-size: 2rem;
+    padding-left: 9rem;
+    padding-right: 19rem;
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+}
+
+.line {
+    padding-left: 5rem;
+}
+
+.projetos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.artigo {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+}
+
+.artigo img {
+    transition: transform 0.4s ease;
+    filter: grayscale(0%);
+    width: 600px;
+    height: auto;
+}
+
+.artigo:hover img {
+    filter: grayscale(30%);
+}
+
+.artigo:hover {
+    background-color: rgb(233, 233, 233, 0.2);
+    color: greenyellow;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: center;
+    width: 600px;
+}
+
+.sobre {
+    padding-bottom: 4rem;
+}
+
+.contatos {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #1a1a1a;
+    align-items: right;
+}
+
+.contatos h2 {
+    font-size: 2rem;
+    padding-left: 25rem;
+}
+
+.contatos p {
+    font-size: 2rem;
+}
+
+.cont {
+    display: flex;
+    flex-direction: row;
+    gap: 35rem;
+    padding-bottom: 2rem;
+}
+
+/* ========================= */
+/* 📱 CELULAR (até 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        text-align: left;
+        width: 100%;
+    }
+
+    /* HEADER */
+    .header-main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .logo {
+        padding: 0;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav {
+        flex-direction: row;
+        /* lado a lado */
+        justify-content: center;
+        /* centraliza horizontalmente */
+        flex-wrap: wrap;
+        /* quebra linha se não couber */
+        gap: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.89);
+        transition: color 0.3s;
+    }
+
+    .nav a:hover {
+        color: greenyellow;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .inicio {
+        padding-top: 12rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        min-height: 70vh;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        padding: 1rem 0;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        max-width: 90%;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    .line {
+        padding-left: 0;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        padding: 1rem 0;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .cont {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .artigo {
+        width: 100%;
+    }
+
+    .sobre {
+        padding-bottom: 2rem;
+    }
+
+    .texto {
+        font-size: 2rem;
+        padding-left: 1rem;
+        padding-right: 0rem;
+        padding-top: 4rem;
+        padding-bottom: 9rem;
+    }
+
+    .contatos h2,
+    .contatos p {
+        padding-left: 0;
+        font-size: 1.2rem;
+    }
+
+    .contatos {
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width:1440px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header-main {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .logo {
+        padding-right: 30rem;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.89);
+        transition: color 0.3s;
+    }
+
+    .nav a:hover {
+        color: greenyellow;
+    }
+
+    .cont {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contatos h2,
+    .contatos p {
+        padding-left: 0;
+        font-size: 1.2rem;
+    }
+
+    .contatos {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+}
