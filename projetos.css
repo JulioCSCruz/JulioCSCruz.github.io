@@ -16,6 +16,7 @@ body {
     background: linear-gradient(90deg, #0a0a0a, #1a1a1a);
     z-index: 1000;
     position: fixed;
+    width: 100%;
 }
 
 
@@ -109,8 +110,6 @@ body {
 
 .inicio * {
     position: relative;
-    z-index: 1;
-    /* texto acima do overlay */
 }
 
 .inicio p {
@@ -242,7 +241,6 @@ a:hover {
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 1000;
     }
 
     .logo {
@@ -374,7 +372,6 @@ a:hover {
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 1000;
     }
 
     .logo {
@@ -478,3 +475,4 @@ a:hover {
     }
 
 }
+
